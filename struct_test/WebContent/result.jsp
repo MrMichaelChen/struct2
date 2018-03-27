@@ -9,8 +9,11 @@
 <body>
 <script type="text/javascript">
 			var result="<%=session.getAttribute("RESULT")%>";
-			if (result != undefined){
+			if (result != ''){
 				document.write("结果是"+result);
+			}
+			else{
+				document.write("系统没有收到有效用户名哦")
 			}
 		</script> 
 </body>

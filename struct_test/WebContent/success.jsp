@@ -7,8 +7,11 @@
 <h1>成功！</h1>
 <script type="text/javascript">
 			var username="<%=session.getAttribute("USER_NAME")%>";
-			if (username != undefined){
+			if (username != ''){
 				document.write("您的用户名是"+username);
+			}
+			else{
+				document.write("系统没有收到有效用户名哦")
 			}
 		</script> 
 </body>
