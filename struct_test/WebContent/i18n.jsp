@@ -6,9 +6,9 @@
 <s:head/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title><s:text name="title" /></title>
-</head>
+</head> 
 <body>
-    <form action="Register.action" method="post">
+    <form action="Test.action" method="post">
         <table> 
             <tr>
                 <!-- 把和显示相关的文字都替换成  <s:text name="对应资源文件的键"/> -->

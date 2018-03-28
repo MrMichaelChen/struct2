@@ -21,5 +21,10 @@
         	<result name="success">/result.jsp</result>
         	<result name="fail">/fail.jsp</result>
         </action>
+        <action name="Test" class="processAction.TestAction">
+            <result name="success">success.jsp</result>
+            <!-- 校验失败后，struts2会把页面转到名为"input"的页面中 -->
+            <result name="input">i18n.jsp</result>
+        </action>
     </package>
 </struts>
