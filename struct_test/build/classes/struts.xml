@@ -21,10 +21,33 @@
         	<result name="success">/result.jsp</result>
         	<result name="fail">/fail.jsp</result>
         </action>
-        <action name="Test" class="processAction.TestAction">
-            <result name="success">success.jsp</result>
-            <!-- 校验失败后，struts2会把页面转到名为"input"的页面中 -->
-            <result name="input">i18n.jsp</result>
+<!--         <action name="Testi18n" class="processAction.TestAction"> -->
+<!--             <result name="success">/sec/success.jsp</result> -->
+      
+<!--             <result name="input">/sec/i18n.jsp</result> -->
+<!--         </action> -->
+    </package>
+    <package name="sec" namespace="/sec" extends="struts-default">
+    	<interceptors>
+    		<interceptor name="logincheck" class="processAction.TestActionInterceptor"></interceptor>
+    		<interceptor name="lcheck" class="processAction.loginInterceptor"></interceptor>
+    	<interceptor-stack name="check">
+    		<interceptor-ref name="logincheck"/>
+    	</interceptor-stack>
+    	</interceptors>
+<!--      	<default-interceptor-ref name="check" />  -->
+    	<global-results>
+    		<result name="input">/sec/i18n.jsp</result>
+    	</global-results>
+     	<action name="Testi18n" class="processAction.TestAction">
+            <result name="success">/sec/success.jsp</result>
+            <result name="input">/sec/i18n.jsp</result>
+<!--             <interceptor-ref name="lcheck"></interceptor-ref> -->
+        </action>
+        <action name="checkuser" class="processAction.checkuserAction">
+            <result name="success">/sec/showinfo.jsp</result>
+            <result name="input">/sec/i18n.jsp</result>
+            <interceptor-ref name="check"></interceptor-ref>
         </action>
     </package>
 </struts>
