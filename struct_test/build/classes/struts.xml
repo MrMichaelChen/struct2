@@ -21,11 +21,14 @@
         	<result name="success">/result.jsp</result>
         	<result name="fail">/fail.jsp</result>
         </action>
-<!--         <action name="Testi18n" class="processAction.TestAction"> -->
-<!--             <result name="success">/sec/success.jsp</result> -->
-      
-<!--             <result name="input">/sec/i18n.jsp</result> -->
-<!--         </action> -->
+        <action name="Testi18n" class="processAction.TestAction">
+            <result name="success">/success.jsp</result>
+            <result name="input">/i18n.jsp</result>
+        </action>
+      	<action name="aichen" class="processAction.aichen">
+      		<result name="success">/success.jsp</result>
+            <result name="input">/validate.jsp</result>
+      	</action>
     </package>
     <package name="sec" namespace="/sec" extends="struts-default">
     	<interceptors>

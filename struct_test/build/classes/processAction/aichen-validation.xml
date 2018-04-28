@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
 <validators>
-    <!-- name值为需要被校验的字段，这里对email字段进行校验 -->
-    <field name="email">
+    <!-- name值为需要被校验的字段，这里对username字段进行校验 -->
+    <field name="username">
         <!-- type值为校验器名，requiredstring：非空字符串校验器 -->
         <field-validator type="requiredstring">
             <!-- 去掉具体的验证错误信息，通过 <message> 标签的key属性指定其对应的验证错误信息。 -->
-            <message key="form.email.null" />
+            <message key="form.username.null" />
         </field-validator>
-        <!-- 一个字段可以配置多个校验器，email：校验邮箱格式 -->
-        <field-validator type="email">
-            <!-- 去掉具体的验证错误信息，通过 <message> 标签的key属性指定其对应的验证错误信息。 -->
-            <message key="form.email.format" />
-        </field-validator>
+<!--         一个字段可以配置多个校验器，username：校验邮箱格式 -->
+<!--         <field-validator type="required"> -->
+<!--             去掉具体的验证错误信息，通过 <message> 标签的key属性指定其对应的验证错误信息。 -->
+<!--             <message key="form.username.format" /> -->
+<!--         </field-validator> -->
     </field>
 
     <field name="password">
@@ -36,11 +39,11 @@
     </field>
 
     <!-- 校验电话格式，使用regex正则表达示校验，regexExpression参数指定正则表达式 -->
-    <field name="phone">
+    <field name="age">
         <field-validator type="regex">
             <!-- 注意！2.3.15前的版本使用 expression 参数 -->
-            <param name="regexExpression"><![CDATA[\d{11}]]></param>
-            <message key="form.phone.format" />
+            <param name="regexExpression"><![CDATA[^[1-9]\d*$]]></param>
+            <message key="form.age.format" />
         </field-validator>
     </field>
 
