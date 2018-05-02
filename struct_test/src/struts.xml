@@ -53,4 +53,68 @@
             <interceptor-ref name="check"></interceptor-ref>
         </action>
     </package>
+<!--     <package name="hello" namespace="/" extends="struts-default">   -->
+<!--     	<action name="upload" class="action.UploadAction" method="upload">          -->
+<!--         在struts.xml文件中使用constant元素指定在全局的struts.properties文件中自定义出错信息,value值为*.properties类型的文件名   -->
+<!--         <constant name="struts.custom.i18n.resources" value="struts"></constant>      -->
+<!--         配置fileUpload的拦截器   -->
+<!--         <interceptor-ref name="fileUpload">      -->
+<!--            配置允许上传的文件类型   -->
+<!--            <param name="allowedTypes">image/bmp,image/gif,image/jpg</param>               -->
+<!--            配置允许上传文件的扩展名,如果有多个用","隔开       -->
+<!--            <param name="allowedExtensions">txt,excel,ppt</param>                     -->
+<!--            配置允许上传的文件大小,最大为20k   -->
+<!--            <param name="maximumSize">20480</param>   -->
+<!--         </interceptor-ref>   -->
+<!--         配置struts2的默认拦截器栈    -->
+<!--         <interceptor-ref name="defaultStack"></interceptor-ref>     -->
+<!--        <result>/success.jsp</result>     -->
+<!--        上传失败时返回的视图页面   -->
+<!--        <result name="input">/index.jsp</result>        -->
+<!--      </action>   -->
+<!-- </package>   -->
+	<package name="file" extends="struts-default">
+   	<action name="fileUpload" class="processAction.FileUpload">
+              <interceptor-ref name="fileUpload">  
+   
+           <!-- 配置允许上传的文件类型 -->  
+           <param name="allowedTypes">image/bmp,image/gif,image/jpg</param>      
+        
+           <!--配置允许上传文件的扩展名,如果有多个用","隔开 -->      
+           <param name="allowedExtensions">txt,excel,ppt</param>    
+                
+           <!-- 配置允许上传的文件大小,最大为20k -->  
+           <param name="maximumSize">20480</param>  
+  
+        </interceptor-ref>  
+        <interceptor-ref name="defaultStack"></interceptor-ref>  
+      <result name="success">/upload_res.jsp</result>
+      <result name="input">/uploadfile.jsp</result>  
+  
+    
+    </action>  
+   </package>
+   <package name="download" extends="struts-default">   
+  <action name="download" class="processAction.DownloadAction" method="execute">  
+  
+     <!-- 对Action类中的文件路径参数设置初始值 -->  
+     <param name="downloadPath">${savePath}</param>  
+          
+        <!-- 设置一个stream类型的result -->  
+        <result name="success" type="stream">  
+            
+           <!-- 设置下载文件的输入流属性名 -->  
+           <param name="inputName">targetFile</param>  
+  
+           <!-- 设置下载文件的文件类型，配置后可以直接在浏览器上浏览，省略则会弹出是保存文件还是打开文件信息的对话框 -->  
+          <!-- <param name="contentType">image/jpg</param> -->  
+  
+           <!-- 设置下载文件的文件名 -->  
+           <param name="contentDisposition">attachment;filename=${filename}</param>  
+  
+           <!-- 设置下载文件的缓冲 -->  
+           <param name="bufferSize">2048</param>  
+      </result>  
+   </action>  
+ 	</package>  
 </struts>
