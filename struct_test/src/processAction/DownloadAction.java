@@ -42,7 +42,7 @@ public class DownloadAction extends ActionSupport{
 
    // 隐含属性 targetFile ,用于封装下载文件  
 	public InputStream getTargetFile() throws FileNotFoundException  
-	{  
+	{  	//此处可以定义文件在系统中的路径，不同环境需要更改此变量
 	    return new FileInputStream("D:\\work\\pgadmin.log");  
 	}  
 	

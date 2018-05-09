@@ -76,22 +76,17 @@
 	<package name="file" extends="struts-default">
    	<action name="fileUpload" class="processAction.FileUpload">
               <interceptor-ref name="fileUpload">  
-   
-           <!-- 配置允许上传的文件类型 -->  
-           <param name="allowedTypes">image/bmp,image/gif,image/jpg</param>      
-        
+              
            <!--配置允许上传文件的扩展名,如果有多个用","隔开 -->      
            <param name="allowedExtensions">txt,excel,ppt</param>    
                 
            <!-- 配置允许上传的文件大小,最大为20k -->  
            <param name="maximumSize">20480</param>  
-  
+           
         </interceptor-ref>  
         <interceptor-ref name="defaultStack"></interceptor-ref>  
       <result name="success">/upload_res.jsp</result>
-      <result name="input">/uploadfile.jsp</result>  
-  
-    
+      <result name="input">/upload_fail.jsp</result>  
     </action>  
    </package>
    <package name="download" extends="struts-default">   
