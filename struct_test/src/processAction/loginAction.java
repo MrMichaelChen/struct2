@@ -30,6 +30,7 @@ public class loginAction extends ActionSupport implements SessionAware {
 		this.password = password;
 	}
 
+	@SuppressWarnings("rawtypes")
 	private Map session;
 
 	public void setSession(Map session) {

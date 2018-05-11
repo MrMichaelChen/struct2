@@ -29,6 +29,31 @@
       		<result name="success">/success.jsp</result>
             <result name="input">/validate.jsp</result>
       	</action>
+     
+     
+     
+<!--       	<action name="stu_list" class="sqlmethod.StuAction"> -->
+<!--         <result>/stu_list.jsp</result> -->
+<!--      </action> -->
+<!--      <action name="stu_edit" class="sqlmethod.StuAction" method="edit"> -->
+<!--         <result>/stu_edit.jsp</result> -->
+<!--      </action> -->
+<!--      <action name="stu_save" class="sqlmethod.StuAction" method="save"> -->
+<!--         <result type="redirect">/stu_save_suc.jsp</result> -->
+<!--         <result name="error" type="redirect">/stu_save_error.jsp</result> -->
+<!--      </action>  -->
+<!--       <action name="stu_update" class="sqlmethod.StuAction" method="update"> -->
+<!--         <result type="redirect">/stu_update_suc.jsp</result> -->
+<!--         <result name="error" type="redirect">/stu_update_error.jsp</result> -->
+<!--      </action>  -->
+<!--       <action name="stu_del" class="sqlmethod.StuAction" method="del"> -->
+<!--         <result type="redirect">/stu_del_suc.jsp</result> -->
+<!--         <result name="error" type="redirect">/stu_del_error.jsp</result> -->
+<!--      </action> -->
+     
+     
+     
+     
     </package>
     <package name="sec" namespace="/sec" extends="struts-default">
     	<interceptors>
@@ -112,4 +137,5 @@
       </result>  
    </action>  
  	</package>  
+  	<include file="jdbc.xml" /> 
 </struts>
