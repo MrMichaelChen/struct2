@@ -25,7 +25,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  del stu suc,5s后自动跳转
+  del stu suc,5s后自动跳转 <br>
+     
+     您刚才的操作删除id为<s:property value="stu.id"/>的学生信息成功
     <s:debug/><br>   
   </body>
 </html>
